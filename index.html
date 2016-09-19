@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="x-rim-auto-match" content="none">
+	<title>Brush</title>
+	<style>
+		.brush {
+			width: 1240px;
+			height: 770px;
+			opacity: 0;
+			overflow: hidden;
+			position: relative;
+		}
+
+		.brush__mask-preload {
+			position: absolute;
+			left: -9999px;
+			top: -9999px;
+		}
+		.brush__img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+		}
+		.brush__mask {
+			background: url("i/mask.png") no-repeat 0 0;
+			background-size: cover;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="brush">
+		<img src="i/mask.png" alt="" width="1" height="1" class="brush__mask-preload">
+		<img src="i/img.jpg" alt="" class="brush__img">
+        <div class="brush__mask"></div>
+	</div>
+	
+	 <script src="js/jquery.min.js"></script>
+	 <script src="js/jquery.paintBrush.js"></script>
+	 <script>
+		$(function(){
+			$('.brush').paintBrush();
+		});
+	 </script>
+</body>
+</html>
